@@ -1,14 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { QuotingComponent } from './quoting/quoting.component';
+import { RankingComponent } from './ranking/ranking.component';
+import { SortPipe } from './ranking/sort.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuotingComponent,
+    RankingComponent,
+    SortPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
