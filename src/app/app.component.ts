@@ -12,9 +12,6 @@ export class AppComponent {
   isValid: boolean = true;
   numberKey: number = 0;
 
-  removeAt(array, index){
-    return array.removeAt(index);
-  }
 
   voteUp(quoteid){
     for (let i = 0; i < this.quotes.length; ++i){
@@ -33,13 +30,15 @@ export class AppComponent {
   delete(quoteid){
     for (let i = 0; i < this.quotes.length; ++i){
       if (this.quotes[i].id == quoteid){
-        return this.removeAt(this.quotes, i);
+        this.quotes.splice(i, 1);
       }
     }
   }
 
   addquote(quote){
-    this.quotes.push(quote);
+    let newquotearray = this.quotes
+    newquotearray.push(quote);
+    this.quotes = newquotearray;
     this.numberKey += 1;
   }
 
